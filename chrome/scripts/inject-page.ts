@@ -19,7 +19,7 @@
   }
 
   function follow() {
-    const $followBtn = document.querySelector<HTMLElement>('.article-area .follow-btn')
+    const $followBtn = document.querySelector<HTMLElement>('.article-area .follow-button')
     if (!$followBtn.className.includes('followed')) {
       $followBtn.click()
     }
