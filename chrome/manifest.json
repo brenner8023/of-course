@@ -1,0 +1,36 @@
+{
+  "name": "of-course",
+  "version": "0.1.0",
+  "manifest_version": 2,
+  "description": "一键三连，下次一定",
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self';",
+  "permissions": [
+    "storage",
+    "tabs",
+    "http://*/",
+    "https://*/"
+  ],
+  "background": {
+    "scripts": ["scripts/background.js"]
+  },
+  "browser_action": {
+  },
+  "icons": {
+    "16": "icons/logo-16-disable.png",
+    "32": "icons/logo-32-disable.png",
+    "48": "icons/logo-48-disable.png",
+    "128": "icons/logo-128-disable.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["scripts/content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "web_accessible_resources": [
+    "scripts/inject-page.js",
+    "index.html"
+  ]
+}
